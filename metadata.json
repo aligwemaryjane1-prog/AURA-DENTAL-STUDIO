@@ -1,0 +1,6 @@
+{
+  "name": "Aura Dental Studio — Premium Dental Practice",
+  "description": "A high-end, patient-centered dental studio offering general, cosmetic, implant, and emergency dental care with modern technology and seamless appointment booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
