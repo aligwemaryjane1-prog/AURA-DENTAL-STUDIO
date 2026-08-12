@@ -10,38 +10,39 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenBooking }) => {
   return (
-    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-white to-[#FAF9F6]">
+    <section className="relative pt-32 sm:pt-36 lg:pt-36 pb-12 sm:pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-white to-[#FAF9F6]">
       {/* Soft Background Accents */}
       <div className="absolute top-12 right-1/4 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-teal-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
             
-            {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono tracking-wider uppercase shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-              <span>San Francisco's Premier Dental Studio</span>
+            {/* Eyebrow Badge - Centered on Mobile, clear top margin below fixed header */}
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-[10px] xs:text-xs font-mono tracking-wider uppercase shadow-xs max-w-full">
+              <Sparkles className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+              <span className="truncate">San Francisco's Premier Dental Studio</span>
             </div>
 
-            {/* Editorial Main Headline */}
-            <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl text-slate-900 font-semibold tracking-tight leading-[1.1]">
-              Confident Smiles Start With <span className="italic font-normal text-sky-700">Exceptional Care</span>.
+            {/* Editorial Main Headline - Responsive Mobile Serif Sizing */}
+            <h1 className="font-serif-title text-[34px] min-[375px]:text-[42px] min-[414px]:text-[48px] sm:text-5xl lg:text-6xl text-slate-900 font-semibold tracking-tight leading-[0.98] sm:leading-[1.05] text-center lg:text-left">
+              <span className="block">CONFIDENT SMILES.</span>
+              <span className="block text-sky-700 mt-1 sm:mt-0">EXPERT CARE.</span>
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-sans">
-              Experience dental care reimagined. At Aura Dental Studio, we combine precision 3D technology, gentle clinical expertise, and a tranquil sanctuary environment to protect and elevate your smile.
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-md lg:max-w-2xl font-sans text-center lg:text-left mx-auto lg:mx-0">
+              Modern dentistry designed around your comfort, confidence, and long-term oral health.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2 w-full sm:w-auto">
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm sm:text-base transition-all shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm sm:text-base transition-all shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book an Appointment</span>
@@ -49,36 +50,36 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenBooking }) => {
 
               <button
                 onClick={() => onNavigate('services')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-medium text-sm sm:text-base transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-medium text-sm sm:text-base transition-all cursor-pointer"
               >
-                <span>Explore Services</span>
+                <span>Explore Our Services</span>
                 <ArrowRight className="w-4 h-4 text-slate-500" />
               </button>
             </div>
 
             {/* Trust Badges */}
-            <div className="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-left">
+            <div className="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-4 text-center lg:text-left w-full">
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-slate-900">{CLINIC_INFO.yearsInPractice}+ Years</div>
-                <div className="text-xs text-slate-500 font-sans">Clinical Excellence</div>
+                <div className="font-heading font-bold text-lg sm:text-2xl text-slate-900">{CLINIC_INFO.yearsInPractice}+ Years</div>
+                <div className="text-[11px] sm:text-xs text-slate-500 font-sans">Clinical Excellence</div>
               </div>
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-slate-900">{CLINIC_INFO.patientsServed}</div>
-                <div className="text-xs text-slate-500 font-sans">Patients Treated</div>
+                <div className="font-heading font-bold text-lg sm:text-2xl text-slate-900">{CLINIC_INFO.patientsServed}</div>
+                <div className="text-[11px] sm:text-xs text-slate-500 font-sans">Patients Treated</div>
               </div>
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-slate-900 flex items-center gap-1">
+                <div className="font-heading font-bold text-lg sm:text-2xl text-slate-900 flex items-center justify-center lg:justify-start gap-1">
                   <span>{CLINIC_INFO.googleRating}</span>
-                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                 </div>
-                <div className="text-xs text-slate-500 font-sans">{CLINIC_INFO.totalReviews}+ Reviews</div>
+                <div className="text-[11px] sm:text-xs text-slate-500 font-sans">{CLINIC_INFO.totalReviews}+ Reviews</div>
               </div>
             </div>
 
           </div>
 
           {/* Right Hero Image Frame */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
               <img
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"

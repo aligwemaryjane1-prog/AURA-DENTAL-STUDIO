@@ -84,8 +84,8 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenBooking }) => {
           aria-label="MJ - Maryjane Web Designer & Developer"
         >
           <img
-            src="/logo-dark.png"
-            alt="MJ - Maryjane Web Designer & Developer"
+            src="https://res.cloudinary.com/kwlyxhc8/image/upload/v1786423217/ChatGPT_Image_Aug_11_2026_05_36_11_AM_lfg67w.png"
+            alt="Aura Dental Studio Logo"
             referrerPolicy="no-referrer"
             className="h-8 sm:h-9 md:h-10 w-auto object-contain"
           />

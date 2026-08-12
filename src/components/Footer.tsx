@@ -18,9 +18,12 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* COLUMN 1 — BRAND */}
           <div className="space-y-4">
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-sky-600/20 border border-sky-500/30 text-sky-400 flex items-center justify-center font-bold group-hover:bg-sky-600/30 transition-colors">
-                <Sparkles className="w-5 h-5" />
-              </div>
+              <img
+                src="https://res.cloudinary.com/kwlyxhc8/image/upload/v1786423217/ChatGPT_Image_Aug_11_2026_05_36_11_AM_lfg67w.png"
+                alt="Aura Dental Studio Logo"
+                referrerPolicy="no-referrer"
+                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
               <div>
                 <div className="font-serif-title font-bold text-white text-xl tracking-tight">
                   Aura Dental Studio

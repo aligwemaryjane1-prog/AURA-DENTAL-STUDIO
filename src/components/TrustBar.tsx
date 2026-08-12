@@ -1,39 +1,32 @@
 import React from 'react';
-import { Shield, Award, CheckCircle, HeartHandshake } from 'lucide-react';
-import { INSURANCE_PROVIDERS } from '../data/dentalData';
+import { Award, Heart, Cpu, Sparkles } from 'lucide-react';
 
 export const TrustBar: React.FC = () => {
+  const points = [
+    { icon: Award, title: 'Experienced Dental Care' },
+    { icon: Heart, title: 'Patient-Centred Approach' },
+    { icon: Cpu, title: 'Modern Dental Technology' },
+    { icon: Sparkles, title: 'Comprehensive Treatments' },
+  ];
+
   return (
-    <section className="bg-slate-900 text-slate-300 py-8 border-y border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-800/80 pb-6">
-          <div className="flex items-center gap-3">
-            <Shield className="w-5 h-5 text-sky-400" />
-            <span className="text-xs font-mono tracking-wider uppercase text-slate-300">
-              Accredited Clinical Excellence &amp; PPO Partners
-            </span>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-medium">
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-400" /> ADA Accredited</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-400" /> AACD Cosmetic Fellow</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-400" /> ICOI Implant Fellow</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-400" /> 0% Financing Available</span>
-          </div>
+    <section className="bg-slate-900 text-white py-8 border-y border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+          {points.map((pt, idx) => {
+            const Icon = pt.icon;
+            return (
+              <div key={idx} className="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
+                <div className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-400/20 text-sky-400 flex items-center justify-center shrink-0">
+                  <Icon className="w-4 h-4" />
+                </div>
+                <span className="font-heading font-semibold text-xs sm:text-sm text-slate-100 tracking-tight">
+                  {pt.title}
+                </span>
+              </div>
+            );
+          })}
         </div>
-
-        {/* Insurance logos / badges list */}
-        <div className="flex flex-wrap items-center justify-center lg:justify-between gap-4 text-xs font-semibold text-slate-400">
-          <span className="text-slate-400 font-mono text-[11px] uppercase">In-Network PPO Plans:</span>
-          {INSURANCE_PROVIDERS.slice(0, 6).map((provider) => (
-            <div key={provider} className="px-3.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">
-              {provider}
-            </div>
-          ))}
-          <span className="text-sky-400 hover:text-sky-300 cursor-pointer text-xs">+ More</span>
-        </div>
-
       </div>
     </section>
   );

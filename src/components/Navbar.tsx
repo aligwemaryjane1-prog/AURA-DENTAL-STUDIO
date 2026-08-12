@@ -110,14 +110,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
             className="flex items-center gap-2.5 text-left group cursor-pointer shrink-0"
             aria-label="Aura Dental Studio Home"
           >
-            <div className="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center font-serif-title font-bold text-xl shadow-xs border border-slate-800 transition-transform duration-200 group-hover:scale-105">
-              A
-            </div>
+            <img
+              src="https://res.cloudinary.com/kwlyxhc8/image/upload/v1786423217/ChatGPT_Image_Aug_11_2026_05_36_11_AM_lfg67w.png"
+              alt="Aura Dental Studio Logo"
+              referrerPolicy="no-referrer"
+              className="h-8 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
+            />
             <div>
-              <div className="font-heading font-bold text-base sm:text-lg text-slate-900 tracking-tight leading-none flex items-center gap-1">
+              <div className="font-heading font-bold text-sm sm:text-lg text-slate-900 tracking-tight leading-none flex items-center gap-1">
                 AURA <span className="font-light text-sky-600">DENTAL</span>
               </div>
-              <div className="text-[9px] font-mono tracking-widest text-slate-500 uppercase mt-0.5">
+              <div className="text-[8px] sm:text-[9px] font-mono tracking-wider sm:tracking-widest text-slate-500 uppercase mt-0.5 whitespace-nowrap">
                 STUDIO &bull; SAN FRANCISCO
               </div>
             </div>

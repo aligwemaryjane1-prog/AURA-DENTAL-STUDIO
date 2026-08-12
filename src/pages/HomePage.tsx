@@ -5,15 +5,8 @@ import { TrustBar } from '../components/TrustBar';
 import { ServicesOverview } from '../components/ServicesOverview';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { MeetDentists } from '../components/MeetDentists';
-import { TechSection } from '../components/TechSection';
-import { PatientJourney } from '../components/PatientJourney';
-import { SmileGallery } from '../components/SmileGallery';
 import { TestimonialsSection } from '../components/TestimonialsSection';
-import { InsurancePaymentSection } from '../components/InsurancePaymentSection';
-import { EmergencyCallout } from '../components/EmergencyCallout';
-import { FaqSection } from '../components/FaqSection';
-import { BlogSection } from '../components/BlogSection';
-import { ContactSection } from '../components/ContactSection';
+import { FinalCTA } from '../components/FinalCTA';
 
 interface HomePageProps {
   onOpenBooking: (serviceId?: string) => void;
@@ -24,6 +17,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking }) => {
 
   return (
     <>
+      {/* 1. HERO SECTION */}
       <Hero
         onNavigate={(route) => {
           if (route === 'services') navigate('/services');
@@ -32,19 +26,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking }) => {
         }}
         onOpenBooking={() => onOpenBooking()}
       />
+
+      {/* 2. TRUST / CREDIBILITY SECTION */}
       <TrustBar />
+
+      {/* 3. SERVICES SECTION */}
       <ServicesOverview onOpenBookingForService={(id) => onOpenBooking(id)} />
+
+      {/* 4. WHY AURA DENTAL SECTION */}
       <WhyChooseUs />
+
+      {/* 5. DENTIST / TEAM SECTION */}
       <MeetDentists onOpenBooking={() => onOpenBooking()} />
-      <TechSection onNavigate={(route) => navigate('/technology')} />
-      <PatientJourney onOpenBooking={() => onOpenBooking()} />
-      <SmileGallery onOpenBooking={() => onOpenBooking()} />
+
+      {/* 6. TESTIMONIALS */}
       <TestimonialsSection />
-      <InsurancePaymentSection onOpenBooking={() => onOpenBooking()} />
-      <EmergencyCallout onNavigate={() => navigate('/emergency-dentistry')} />
-      <FaqSection />
-      <BlogSection />
-      <ContactSection onOpenBooking={() => onOpenBooking()} />
+
+      {/* 7. FINAL CTA */}
+      <FinalCTA onOpenBooking={() => onOpenBooking()} />
     </>
   );
 };
